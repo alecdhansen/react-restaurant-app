@@ -9,7 +9,6 @@
 }
 .menu-page {
   display: flex;
-  justify-content: space-around;
 }
 .card-ul {
   display: grid;
@@ -27,7 +26,9 @@
   width: 600px;
 }
 .checkout-side {
-  margin-right: 50px;
+  position: fixed;
+  right: 0;
+  top: 25%;
 }
 .card {
   width: 100%;

@@ -1,9 +1,15 @@
+import { NavItem } from "react-bootstrap";
 import MenuItem from "./MenuItem";
 
-function MenuList({ menuItems }) {
+function MenuList({ menuItems, ...props }) {
   return (
     <>
-      <MenuItem menuItems={menuItems} />
+      <MenuItem
+        menuItems={menuItems}
+        addOrder={props.addOrder}
+        // key={item.id}
+        // menuItem={menuItem}
+      />
     </>
   );
 }

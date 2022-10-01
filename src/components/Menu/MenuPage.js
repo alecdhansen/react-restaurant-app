@@ -6,14 +6,21 @@ import { useState } from "react";
 
 function MenuPage() {
   const [menuItems, setMenuItems] = useState(INITIAL_MENU);
-
+  const [orderList, setOrderList] = useState([]);
+  // console.log(menuItems);
+  const addOrder = (id) => {
+    const index = menuItems.findIndex((menuItem) => menuItem.id === id);
+    const newOrderItem = menuItems[index];
+    // console.log(newOrderItem);
+    setOrderList([...orderList, newOrderItem]);
+  };
   return (
     <div className="menu-page">
       <div className="menu-side">
-        <MenuList menuItems={menuItems} />
+        <MenuList menuItems={menuItems} addOrder={addOrder} />
       </div>
       <div className="checkout-side">
-        <Checkout menuItem={menuItems} />
+        <Checkout menuItems={menuItems} orderList={orderList} />
         {/* {menu} */}
       </div>
     </div>
