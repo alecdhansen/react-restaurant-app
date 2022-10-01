@@ -1,16 +1,12 @@
 import Checkout from "./Checkout";
+import Button from "react-bootstrap/Button";
 import MenuList from "./MenuList";
 import INITIAL_MENU from "./menu";
 import { useState } from "react";
 
-const FILTER_OPTIONS = {
-  all: (menuItem) => [menuItem],
-  lunch: (menuItem) => menuItem.tag === "lunch",
-  dinner: (menuItem) => menuItem.tag === "dinner",
-};
-
 function MenuPage() {
   const [menuItems, setMenuItems] = useState(INITIAL_MENU);
+
   return (
     <div className="menu-page">
       <div className="menu-side">
