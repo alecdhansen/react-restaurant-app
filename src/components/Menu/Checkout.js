@@ -1,4 +1,4 @@
 function Checkout() {
-  return <div>Checkout over here!</div>;
+  return <>Checkout over here!</>;
 }
 export default Checkout;

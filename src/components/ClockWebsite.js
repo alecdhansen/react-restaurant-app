@@ -1,7 +1,7 @@
 import "./ClockWebsite.css";
 import AboutUs from "./AboutUs/AboutUs";
 import Contact from "./Contact/Contact";
-import MenuList from "./Menu/MenuList";
+import MenuPage from "./Menu/MenuPage";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -12,7 +12,7 @@ function ClockWebsite() {
   const [page, setPage] = useState("a");
   let content;
   if (page === "a") {
-    content = <MenuList />;
+    content = <MenuPage />;
   } else if (page === "b") {
     content = <AboutUs />;
   } else if (page === "c") {
@@ -55,6 +55,11 @@ function ClockWebsite() {
         </Container>
       </Navbar>
       {content}
+      <Navbar bg="danger" variant="dark" className="footer">
+        <Container className="footer-title">
+          <Navbar.Brand href="#home">The Clock Drive-In</Navbar.Brand>
+        </Container>
+      </Navbar>
     </div>
   );
 }
