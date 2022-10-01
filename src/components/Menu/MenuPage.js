@@ -1,5 +1,4 @@
 import Checkout from "./Checkout";
-import Button from "react-bootstrap/Button";
 import MenuList from "./MenuList";
 import INITIAL_MENU from "./menu";
 import { useState } from "react";
@@ -8,19 +7,32 @@ function MenuPage() {
   const [menuItems, setMenuItems] = useState(INITIAL_MENU);
   const [orderList, setOrderList] = useState([]);
   // console.log(menuItems);
+
   const addOrder = (id) => {
     const index = menuItems.findIndex((menuItem) => menuItem.id === id);
     const newOrderItem = menuItems[index];
-    // console.log(newOrderItem);
     setOrderList([...orderList, newOrderItem]);
+    console.log("you clicked the Add to Order button");
   };
+
+  const removeOrder = (id) => {
+    const index = orderList.findIndex((newOrderItem) => newOrderItem.id === id);
+    const updatedOrderList = [...orderList];
+    updatedOrderList.splice(index, 1);
+    setOrderList(updatedOrderList);
+  };
+
   return (
     <div className="menu-page">
       <div className="menu-side">
         <MenuList menuItems={menuItems} addOrder={addOrder} />
       </div>
       <div className="checkout-side">
-        <Checkout menuItems={menuItems} orderList={orderList} />
+        <Checkout
+          menuItems={menuItems}
+          orderList={orderList}
+          removeOrder={removeOrder}
+        />
         {/* {menu} */}
       </div>
     </div>

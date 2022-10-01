@@ -20,7 +20,6 @@ function MenuItem({ menuItems, ...props }) {
           <Card.Img className="menu-img" variant="top" src={img} />
           <Card.Body className="card-body">
             <Card.Title>{title}</Card.Title>
-            {/* console.log(title) */}
             <p>{price}</p>
             <Button type="button" onClick={() => props.addOrder(id)}>
               Add to Order
