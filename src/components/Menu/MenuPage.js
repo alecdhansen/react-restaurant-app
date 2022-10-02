@@ -14,8 +14,6 @@ function MenuPage() {
     const index = menuItems.findIndex((menuItem) => menuItem.id === id);
     const newOrderItem = menuItems[index];
     setOrderList([...orderList, newOrderItem]);
-
-    console.log("you clicked the Add to Order button");
   };
 
   const removeOrder = (id) => {
