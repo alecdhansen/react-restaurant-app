@@ -1,6 +1,7 @@
 import Checkout from "./Checkout";
 import MenuList from "./MenuList";
 import INITIAL_MENU from "./menu";
+import Example from "./Checkout";
 import { useState } from "react";
 
 function MenuPage() {
@@ -24,18 +25,19 @@ function MenuPage() {
   };
 
   return (
-    <div className="menu-page">
-      <div className="menu-side">
-        <MenuList menuItems={menuItems} addOrder={addOrder} />
-      </div>
-      <div className="checkout-side">
-        <Checkout
-          menuItems={menuItems}
-          orderList={orderList}
-          removeOrder={removeOrder}
-          setOrderList={setOrderList}
-        />
-        {/* {menu} */}
+    <div className="mp1">
+      <div className="menu-page">
+        <div className="menu-side">
+          <MenuList menuItems={menuItems} addOrder={addOrder} />
+        </div>
+        <div className="checkout-side">
+          <Checkout
+            menuItems={menuItems}
+            orderList={orderList}
+            removeOrder={removeOrder}
+            setOrderList={setOrderList}
+          />
+        </div>
       </div>
     </div>
   );

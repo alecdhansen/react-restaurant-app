@@ -7,7 +7,7 @@ function MenuItem({ menuItems, ...props }) {
 
   const tagList = [...new Set(menuItems.map((menuItem) => menuItem.tag))];
   const tagListHTML = tagList.map((tag, index) => (
-    <Button key={index} onClick={(e) => setFilter(tag)} className="btn2-4">
+    <Button className="nav-button" key={index} onClick={(e) => setFilter(tag)}>
       {tag}
     </Button>
   ));
@@ -29,13 +29,15 @@ function MenuItem({ menuItems, ...props }) {
       </li>
     ));
   return (
-    <>
-      <nav>
-        <Button onClick={(e) => setFilter(null)}>All</Button>
+    <div className="nav-plus-menu">
+      <nav className="sort-nav">
+        <Button className="nav-button-all" onClick={(e) => setFilter(null)}>
+          All
+        </Button>
         {tagListHTML}
       </nav>
       <ul className="card-ul">{menuItemListHTML}</ul>
-    </>
+    </div>
   );
 }
 

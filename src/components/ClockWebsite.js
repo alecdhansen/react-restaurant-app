@@ -21,14 +21,11 @@ function ClockWebsite() {
 
   return (
     <div className="ClockWebsite">
-      <Navbar bg="primary" variant="dark" className="navbar">
+      <Navbar className="navbar">
         <Container>
-          <Navbar.Brand href="#home" className="title">
-            The Clock Drive-In
-          </Navbar.Brand>
-          <Nav className="me-auto">
+          <Navbar.Brand className="title">The Clock Drive-In</Navbar.Brand>
+          <Nav>
             <Button
-              variant="primary"
               type="button"
               className="navBtn"
               onClick={() => setPage("a")}
@@ -55,11 +52,14 @@ function ClockWebsite() {
         </Container>
       </Navbar>
       {content}
-      <Navbar bg="danger" variant="dark" className="footer">
-        <Container className="footer-title">
-          <Navbar.Brand href="#home">The Clock Drive-In</Navbar.Brand>
-        </Container>
-      </Navbar>
+      <footer className="footer">
+        <container className="footer-container">
+          <p class="bottom-copywrite">
+            2022 © The Clock Drive-In. Made by Alec Hansen.
+          </p>
+          <p className="bottom-title">The Clock Drive-In</p>
+        </container>
+      </footer>
     </div>
   );
 }

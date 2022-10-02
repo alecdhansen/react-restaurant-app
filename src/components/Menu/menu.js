@@ -41,5 +41,12 @@ const INITIAL_MENU = [
     price: 12.99,
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Poboy.jpg/600px-Poboy.jpg",
   },
+  {
+    id: 7,
+    title: "Chocolate Cake",
+    tag: "dessert",
+    price: 12.99,
+    img: "https://static.toiimg.com/thumb/53096885.cms?width=1200&height=900",
+  },
 ];
 export default INITIAL_MENU;
