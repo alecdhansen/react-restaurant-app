@@ -49,28 +49,50 @@ function Checkout({
   const emptyCart = () => {
     setOrderList([]);
   };
+
   const cart = orderList.map((orderItem) => (
-    <ListGroup.Item className="d-flex justify-content-between align-items-start">
-      {orderItem.title}
-      <Badge bg="secondary">${orderItem.price}</Badge>
-      <Button onClick={() => removeOrder(orderList.id)}>Remove</Button>
-    </ListGroup.Item>
+    <div className="order-item">
+      <ListGroup.Item className="d-flex justify-content-between align-items-center">
+        {orderItem.title}
+        <Badge bg="secondary">${orderItem.price}</Badge>
+        <Button
+          className="remove-button bttn"
+          onClick={() => removeOrder(orderList.id)}
+        >
+          Remove
+        </Button>
+      </ListGroup.Item>
+    </div>
   ));
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="me-2">
-        View Cart
+      <Button
+        variant="primary"
+        onClick={handleShow}
+        className="view-cart-button bttn"
+      >
+        View Cart <span className="order-length">{orderList.length}</span>
       </Button>
-      <Offcanvas show={show} onHide={handleClose} {...props}>
+
+      <Offcanvas
+        className="checkout-screen"
+        show={show}
+        onHide={handleClose}
+        {...props}
+      >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title className="order-title">Your Order</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           {cart}
-          <p>Subtotal - {subTotal.toFixed(2)}</p>
-          <p>Tax - {(subTotal * 0.08).toFixed(2)}</p>
-          <p>Total - {totalPrice.toFixed(2)}</p>
-          <Button type="button" onClick={() => emptyCart(orderList)}>
+          <p>Subtotal - ${subTotal.toFixed(2)}</p>
+          <p>Tax - ${(subTotal * 0.08).toFixed(2)}</p>
+          <p>Total - ${totalPrice.toFixed(2)}</p>
+          <Button
+            className="clear-order-button bttn"
+            type="button"
+            onClick={() => emptyCart(orderList)}
+          >
             Clear Order
           </Button>
           <Form onSubmit={handleSubmit} className="form">
@@ -109,7 +131,11 @@ function Checkout({
               />
             </InputGroup>
 
-            <Button type="submit" disabled={orderList === [] ? true : false}>
+            <Button
+              className="submit-order-button bttn"
+              type="submit"
+              disabled={orderList === [] ? true : false}
+            >
               Submit Order
             </Button>
           </Form>

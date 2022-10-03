@@ -27,9 +27,6 @@ function MenuPage() {
   return (
     <div className="mp1">
       <div className="menu-page">
-        <div className="menu-side">
-          <MenuList menuItems={menuItems} addOrder={addOrder} />
-        </div>
         <div className="checkout-side">
           <Checkout
             menuItems={menuItems}
@@ -37,6 +34,9 @@ function MenuPage() {
             removeOrder={removeOrder}
             setOrderList={setOrderList}
           />
+        </div>
+        <div className="menu-side">
+          <MenuList menuItems={menuItems} addOrder={addOrder} />
         </div>
       </div>
     </div>

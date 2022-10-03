@@ -31,7 +31,7 @@ function ClockWebsite() {
               onClick={() => setPage("a")}
             >
               Menu/Order
-            </Button>{" "}
+            </Button>
             <Button
               variant="primary"
               type="button"
@@ -39,7 +39,7 @@ function ClockWebsite() {
               onClick={() => setPage("b")}
             >
               About Us
-            </Button>{" "}
+            </Button>
             <Button
               variant="primary"
               type="button"
@@ -47,7 +47,7 @@ function ClockWebsite() {
               onClick={() => setPage("c")}
             >
               Contact
-            </Button>{" "}
+            </Button>
           </Nav>
         </Container>
       </Navbar>
