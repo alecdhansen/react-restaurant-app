@@ -33,12 +33,14 @@ function Checkout({
     setName("");
     setEmail("");
     const submittedOrder = [...orderList, totalPrice.toFixed(2), newInfo];
-    // const localStorageOrders = localStorage.getItem("most-recent-order") || "[]";****
-    // const parsedLocalStorageOrders = JSON.parse(localStorageOrders);*******
+    // const localStorageOrders =
+    //   localStorage.getItem("most-recent-order") || "[]";
+    // const parsedLocalStorageOrders = JSON.parse(localStorageOrders);
+    // console.log(parsedLocalStorageOrders, "is the last order");
     localStorage.setItem("most-recent-order", JSON.stringify(submittedOrder));
     setOrderList([]);
     alert("Order Submitted!");
-    console.log(submittedOrder);
+    console.log(submittedOrder, "is the current order submitted");
   };
   const subTotal = orderList.reduce(
     (acc, menuItems) => acc + menuItems.price,

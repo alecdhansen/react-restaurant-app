@@ -230,3 +230,23 @@
   justify-content: space-between;
   margin-top: 8px;
 }
+.kitchen-div {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kitchen-div > Button {
+  margin-right: 30px;
+}
+.order {
+  font-weight: 800;
+  color: #000;
+}
+.order1 {
+  color: #fff;
+  background-color: var(--red);
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin: none;
+}

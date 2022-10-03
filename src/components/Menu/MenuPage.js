@@ -1,11 +1,10 @@
 import Checkout from "./Checkout";
 import MenuList from "./MenuList";
-import INITIAL_MENU from "./menu";
 import Example from "./Checkout";
 import { useState } from "react";
 
-function MenuPage() {
-  const [menuItems, setMenuItems] = useState(INITIAL_MENU);
+function MenuPage({ INITIAL_MENU, menuItems }) {
+  // const [menuItems, setMenuItems] = useState(INITIAL_MENU);
   const [orderList, setOrderList] = useState([]);
   const [totalCost, setTotalCost] = useState([]);
 
