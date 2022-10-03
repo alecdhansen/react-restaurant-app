@@ -26,7 +26,7 @@ function ClockWebsite() {
 
   return (
     <div className="ClockWebsite">
-      <Navbar className="navbar">
+      <Navbar expand="lg" className="navbar">
         <Container>
           <Navbar.Brand className="title">The Clock Drive-In</Navbar.Brand>
           <Nav>

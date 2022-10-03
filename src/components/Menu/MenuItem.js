@@ -1,12 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { useState } from "react";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import { useState, useRef } from "react";
 
 function MenuItem({ menuItems, ...props }) {
   const [filter, setFilter] = useState("");
-
   const tagList = [...new Set(menuItems.map((menuItem) => menuItem.tag))];
   const tagListHTML = tagList.map((tag, index) => (
     <Button
@@ -28,6 +26,7 @@ function MenuItem({ menuItems, ...props }) {
             <Card.Title>{title}</Card.Title>
             <p>{description}</p>
             <p>${price}</p>
+
             <Button
               className="add-to-order-button bttn"
               type="button"
@@ -42,10 +41,12 @@ function MenuItem({ menuItems, ...props }) {
   return (
     <div className="nav-plus-menu">
       <nav className="sort-nav">
-        <Button className="nav-button-all" onClick={(e) => setFilter(null)}>
-          All
-        </Button>
-        {tagListHTML}
+        <ButtonGroup aria-label="Basic example">
+          <Button className="nav-button-all" onClick={(e) => setFilter(null)}>
+            All
+          </Button>
+          {tagListHTML}
+        </ButtonGroup>
       </nav>
       <ul className="card-ul">{menuItemListHTML}</ul>
     </div>

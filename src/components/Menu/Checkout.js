@@ -19,6 +19,7 @@ function Checkout({
   const handleShow = () => setShow(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [info, setInfo] = useState([]);
   // const [allOrders, setAllOrders] = useState([]);
   const handleSubmit = (e) => {
@@ -27,11 +28,13 @@ function Checkout({
     const newInfo = {
       name,
       email,
+      phone,
       id: nanoid(),
     };
     setInfo(newInfo);
     setName("");
     setEmail("");
+    setPhone("");
     const submittedOrder = [...orderList, totalPrice.toFixed(2), newInfo];
     // const localStorageOrders =
     //   localStorage.getItem("most-recent-order") || "[]";
@@ -40,7 +43,9 @@ function Checkout({
     localStorage.setItem("most-recent-order", JSON.stringify(submittedOrder));
     setOrderList([]);
     alert("Order Submitted!");
+
     console.log(submittedOrder, "is the current order submitted");
+    handleClose();
   };
   const subTotal = orderList.reduce(
     (acc, menuItems) => acc + menuItems.price,
@@ -55,7 +60,7 @@ function Checkout({
     <div className="order-item">
       <ListGroup.Item className="d-flex justify-content-between align-items-center cart-item-title">
         {orderItem.title}
-        <Badge bg="secondary">${orderItem.price}</Badge>
+        <Badge bg="dark">${orderItem.price}</Badge>
         <Button
           className="remove-button bttn"
           onClick={() => removeOrder(orderList.id)}
@@ -72,13 +77,12 @@ function Checkout({
         onClick={handleShow}
         className="view-cart-button bttn"
       >
-        View Cart <br></br>
-        <span className="order-length">
-          {orderList.length === 0 ? "" : orderList.length}
-        </span>
+        View Cart
+        <span className="order-length">{orderList.length}</span>
       </Button>
       <Offcanvas
         className="checkout-screen"
+        placement="end"
         show={show}
         onHide={handleClose}
         {...props}
@@ -91,7 +95,7 @@ function Checkout({
           <div className="totals-plus-button">
             <div>
               <p>Subtotal - ${subTotal.toFixed(2)}</p>
-              <p>Tax - ${(subTotal * 0.08).toFixed(2)}</p>
+              <p>Tax (6%) - ${(subTotal * 0.08).toFixed(2)}</p>
               <p className="totalprice">Total - ${totalPrice.toFixed(2)}</p>
             </div>
             <div>
@@ -136,10 +140,25 @@ function Checkout({
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+              />
+            </InputGroup>
+            <InputGroup className="mb-3">
+              <InputGroup.Text
+                id="inputGroup-sizing-default"
+                className="inputs2"
+              >
+                Phone Number
+              </InputGroup.Text>
+              <Form.Control
+                type="tel"
+                name="phone"
+                placeholder="Enter phone number..."
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 required
               />
             </InputGroup>
-
             <Button
               className="submit-order-button bttn"
               type="submit"

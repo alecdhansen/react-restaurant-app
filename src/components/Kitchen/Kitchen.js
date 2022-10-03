@@ -5,24 +5,22 @@ function Kitchen({ INITIAL_MENU, menuItems, id }) {
   const [show, setShow] = useState(false);
   const localStorageOrders = localStorage.getItem("most-recent-order") || "[]";
   const parsedLocalStorageOrders = JSON.parse(localStorageOrders);
-  //   console.log(parsedLocalStorageOrders);
+  console.log(parsedLocalStorageOrders);
 
   const getLocalStorageOrder = parsedLocalStorageOrders.map(
     (parsedLocalStorageOrder) => (
       <div>
         {parsedLocalStorageOrder.title}
         {parsedLocalStorageOrder.name}
+        <br></br>
+        {parsedLocalStorageOrder.phone}
       </div>
     )
   );
-  const getOrder = () => {
-    // console.log(parsedLocalStorageOrders);
-    return <div key={id}>{getLocalStorageOrder}</div>;
-  };
 
   return (
     <div className="kitchen-div">
-      <Button type="button" onClick={() => setShow(!show)()}>
+      <Button type="button" onClick={() => setShow(!show)}>
         View Current Order
       </Button>
 

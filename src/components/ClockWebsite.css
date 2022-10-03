@@ -82,6 +82,8 @@
 }
 .card-ul {
   display: grid;
+  /* display: flex;
+  flex-wrap: wrap; */
   grid-template-columns: 1fr 1fr 1fr;
   /* grid-template-rows: 1fr 1fr 1fr 1fr; */
   list-style-type: none;
@@ -171,17 +173,19 @@
   height: 100px;
   margin-top: 100%;
   box-shadow: 0px 5px #fff;
-  width: 120px;
-  background-color: rgb(15, 53, 190);
+  width: 130px;
+  background-color: var(--);
   font-weight: 500;
+  font-size: 14px;
 }
 .order-length {
   background-color: #fff;
   color: black;
   border-radius: 10px;
   font-weight: 800;
-  font-size: 25px;
-  /* padding: 2px 2px; */
+  font-size: 14px;
+  padding: 2px 8px;
+  margin-left: 4px;
 }
 .add-to-order-button {
   box-shadow: 0px 5px rgb(229, 229, 229);
