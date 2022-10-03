@@ -30,7 +30,7 @@ function ClockWebsite() {
               className="navBtn"
               onClick={() => setPage("a")}
             >
-              Menu/Order
+              Menu - Order
             </Button>
             <Button
               variant="primary"

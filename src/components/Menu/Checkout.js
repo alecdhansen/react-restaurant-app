@@ -17,7 +17,6 @@ function Checkout({
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [info, setInfo] = useState([]);
@@ -52,7 +51,7 @@ function Checkout({
 
   const cart = orderList.map((orderItem) => (
     <div className="order-item">
-      <ListGroup.Item className="d-flex justify-content-between align-items-center">
+      <ListGroup.Item className="d-flex justify-content-between align-items-center cart-item-title">
         {orderItem.title}
         <Badge bg="secondary">${orderItem.price}</Badge>
         <Button
@@ -65,15 +64,17 @@ function Checkout({
     </div>
   ));
   return (
-    <>
+    <div>
       <Button
         variant="primary"
         onClick={handleShow}
         className="view-cart-button bttn"
       >
-        View Cart <span className="order-length">{orderList.length}</span>
+        View Cart <br></br>
+        <span className="order-length">
+          {orderList.length === 0 ? "" : orderList.length}
+        </span>
       </Button>
-
       <Offcanvas
         className="checkout-screen"
         show={show}
@@ -85,16 +86,22 @@ function Checkout({
         </Offcanvas.Header>
         <Offcanvas.Body>
           {cart}
-          <p>Subtotal - ${subTotal.toFixed(2)}</p>
-          <p>Tax - ${(subTotal * 0.08).toFixed(2)}</p>
-          <p>Total - ${totalPrice.toFixed(2)}</p>
-          <Button
-            className="clear-order-button bttn"
-            type="button"
-            onClick={() => emptyCart(orderList)}
-          >
-            Clear Order
-          </Button>
+          <div className="totals-plus-button">
+            <div>
+              <p>Subtotal - ${subTotal.toFixed(2)}</p>
+              <p>Tax - ${(subTotal * 0.08).toFixed(2)}</p>
+              <p className="totalprice">Total - ${totalPrice.toFixed(2)}</p>
+            </div>
+            <div>
+              <Button
+                className="clear-order-button bttn"
+                type="button"
+                onClick={() => emptyCart(orderList)}
+              >
+                Clear Order
+              </Button>
+            </div>
+          </div>
           <Form onSubmit={handleSubmit} className="form">
             <InputGroup className="mb-3">
               <InputGroup.Text
@@ -141,7 +148,7 @@ function Checkout({
           </Form>
         </Offcanvas.Body>
       </Offcanvas>
-    </>
+    </div>
   );
 }
 

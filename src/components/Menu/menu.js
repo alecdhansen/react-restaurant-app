@@ -47,17 +47,9 @@ const INITIAL_MENU = [
     price: 14.99,
     img: "https://images.unsplash.com/photo-1605789538467-f715d58e03f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
   },
+
   {
     id: 7,
-    title: "Chocolate Cake",
-    description:
-      "16 different types of chocolate come together to make up this masterpiece.",
-    tag: "Dessert",
-    price: 6.99,
-    img: "https://static.toiimg.com/thumb/53096885.cms?width=1200&height=900",
-  },
-  {
-    id: 8,
     title: "Hot Sauce Burger",
     description: "One temp, hot. Free cup of milk included.",
     tag: "Burgers",
@@ -65,7 +57,7 @@ const INITIAL_MENU = [
     img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
   },
   {
-    id: 9,
+    id: 8,
     title: "Loaded Egg Burger",
     description: "The best use of an egg you'll ever experience.",
     tag: "Burgers",
@@ -73,7 +65,7 @@ const INITIAL_MENU = [
     img: "https://images.unsplash.com/photo-1601894087104-0c18bc34dbd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2865&q=80",
   },
   {
-    id: 10,
+    id: 9,
     title: "Roast Beef Sub",
     tag: "Lunch",
     description: "This aint yo mama's roast beef.",
@@ -81,7 +73,7 @@ const INITIAL_MENU = [
     img: "https://images.unsplash.com/photo-1554433607-66b5efe9d304?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
   },
   {
-    id: 11,
+    id: 10,
     title: "Chicken Strip Salad",
     description:
       "Loaded with delicious grilled chicken, you'll forget you're eating a salad.",
@@ -90,7 +82,7 @@ const INITIAL_MENU = [
     img: "https://images.unsplash.com/photo-1580013759032-c96505e24c1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1209&q=80",
   },
   {
-    id: 12,
+    id: 11,
     title: "Pork Chops",
     description: "You'll need a toothpick after this one.",
     tag: "Dinner",
@@ -98,12 +90,21 @@ const INITIAL_MENU = [
     img: "https://images.unsplash.com/photo-1544009717-1c2561ae1439?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1644&q=80",
   },
   {
-    id: 13,
+    id: 12,
     title: "Personal Pizza",
     description: "This pizza will have you ordering 2 more for the road.",
     tag: "Dinner",
     price: 14.99,
     img: "https://images.unsplash.com/photo-1613564834361-9436948817d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=886&q=80",
+  },
+
+  {
+    id: 13,
+    title: "Burrito",
+    description: "We make a surprisingly great burrito.",
+    tag: "Lunch",
+    price: 9.99,
+    img: "https://images.unsplash.com/photo-1574343635105-4cf2ea136b8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
   },
   {
     id: 14,
@@ -116,11 +117,12 @@ const INITIAL_MENU = [
   },
   {
     id: 15,
-    title: "Burrito",
-    description: "We make a surprisingly great burrito.",
-    tag: "Lunch",
-    price: 9.99,
-    img: "https://images.unsplash.com/photo-1574343635105-4cf2ea136b8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    title: "Chocolate Cake",
+    description:
+      "16 different types of chocolate come together to make up this masterpiece.",
+    tag: "Dessert",
+    price: 6.99,
+    img: "https://static.toiimg.com/thumb/53096885.cms?width=1200&height=900",
   },
 ];
 export default INITIAL_MENU;
